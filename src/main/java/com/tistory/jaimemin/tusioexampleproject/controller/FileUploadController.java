@@ -12,6 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * 참고: https://qiita.com/Amtkxa/items/6a605209bcc6eb477ec0
+ * 참고: https://github.com/tus/tus-js-client/blob/master/docs/usage.md
+ * 참고: https://stackoverflow.com/questions/72917279/how-to-upload-multiple-files-using-tus-protocol
+ */
 @Slf4j
 @RestController
 @RequiredArgsConstructor
