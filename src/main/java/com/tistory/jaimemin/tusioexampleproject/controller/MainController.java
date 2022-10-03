@@ -8,8 +8,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
-import java.io.File;
 import java.io.IOException;
+import java.io.OutputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 @Slf4j
 @Controller
@@ -32,10 +35,10 @@ public class MainController {
         log.info("multipartFile = {}", file);
 
         if (!file.isEmpty()) {
-            File dir = new File("dest/" + file.getOriginalFilename());
+            Path filepath = Paths.get("dest/", file.getOriginalFilename());
 
-            if (!dir.exists()) {
-                dir.mkdir();
+            try (OutputStream os = Files.newOutputStream(filepath)) {
+                os.write(file.getBytes());
             }
         }
 
