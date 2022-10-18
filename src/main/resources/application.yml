@@ -2,7 +2,7 @@ tus:
   server:
     data:
       directory: "D:"
-      expiration: 3600000
+      expiration: 60000
 
 spring:
   servlet:
